@@ -1,0 +1,14 @@
+# Data & Predictions (Ne jamais push de gros datasets)
+data/raw/*.csv
+data/processed/*.csv
+results/predictions/*.csv
+
+# Python & Jupyter caches
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Environnements virtuels
+venv/
+env/
+.env
