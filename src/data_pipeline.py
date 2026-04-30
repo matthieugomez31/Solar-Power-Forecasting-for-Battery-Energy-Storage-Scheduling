@@ -19,8 +19,11 @@ import os
 # ─────────────────────────────────────────
 # CONFIG — update CSV_DIR with your path
 # ─────────────────────────────────────────
-CSV_DIR    = r"C:\Users\antoi\Documents\Berkeley\Courses\Data Science in Energy\Project\Données"
-OUTPUT_DIR = os.path.join(CSV_DIR, "data")
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CSV_DIR      = os.path.join(PROJECT_ROOT, "data", "raw")       # Place tes 4 fichiers NSRDB ici
+OUTPUT_DIR   = os.path.join(PROJECT_ROOT, "data", "processed") # Les CSV nettoyés iront ici
+
+os.makedirs(CSV_DIR, exist_ok=True)
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 FILE_PREFIX = "204191_34.05_-118.26_"

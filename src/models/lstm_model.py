@@ -24,8 +24,12 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error
 # ─────────────────────────────────────────
 # CONFIG
 # ─────────────────────────────────────────
-DATA_DIR   = r"C:\Users\antoi\Documents\Berkeley\Courses\Data Science in Energy\Project\Données\data"
-OUTPUT_DIR = DATA_DIR
+# Resolve project root dynamically (assuming script is in src/models/)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+DATA_DIR = os.path.join(PROJECT_ROOT, "data", "processed") # Path to train.csv, val.csv, test.csv
+OUTPUT_DIR = os.path.join(PROJECT_ROOT, "data")            # Path where predictions are saved
+
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # Model hyperparameters
 WINDOW     = 24       # hours of history fed to LSTM
